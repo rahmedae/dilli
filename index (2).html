@@ -1,0 +1,720 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Haven - Authentic North Indian Cuisine</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Vibrant Indian-inspired styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5e6;
+            color: #2c1a0d;
+            margin: 0; /* Ensure no default body margin */
+        }
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(to right, #c0392b, #e67e22);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .navbar a {
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #f1c40f;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #c0392b, #e67e22);
+            flex-direction: column;
+            padding: 1rem;
+            z-index: 1000;
+        }
+        .mobile-menu a {
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .mobile-menu a:hover {
+            color: #f1c40f;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg') no-repeat center/cover;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        /* Marquee inside Hero */
+        .marquee {
+            background: #000000; /* Black background */
+            color: #f1c40f; /* Aesthetic yellow text */
+            padding: 12px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0; /* Position at the bottom of hero section */
+            z-index: 2; /* Above hero overlay but below content */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .marquee-wrapper {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        .marquee-message {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 40px; /* Space between messages */
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        /* Parallax Sections */
+        .parallax1 {
+            background: url('https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg') no-repeat center/cover;
+            background-attachment: fixed;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .parallax2 {
+            background: url('https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg') no-repeat center/cover;
+            background-attachment: fixed;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .parallax1::before, .parallax2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        /* Menu and Specialty Sections */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            flex: 0 0 33.33%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+        }
+        .carousel-btn.prev {
+            left: 10px;
+        }
+        .carousel-btn.next {
+            right: 10px;
+        }
+        .menu-item, .specialty-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .menu-item:hover, .specialty-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .specialty-item {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .specialty-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .specialty-item .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e67e22;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        /* Custom Buttons */
+        .custom-btn {
+            background: linear-gradient(to right, #c0392b, #e67e22);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .custom-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .custom-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .custom-btn:hover::before {
+            left: 100%;
+        }
+        .social-icons a {
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #f1c40f;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        /* Reservation Form */
+        .reservation-form {
+            background: linear-gradient(135deg, #fff5e6, #ffe8cc);
+            border: 2px solid #e67e22;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .reservation-form input, .reservation-form select {
+            transition: all 0.3s ease;
+        }
+        .reservation-form input:focus, .reservation-form select:focus {
+            border-color: #f1c40f;
+            box-shadow: 0 0 8px rgba(241, 196, 15, 0.3);
+        }
+        /* Footer */
+        footer {
+            background: #2c1a0d; /* Darker background for better contrast */
+            color: #fff5e6; /* Light saffron text for readability */
+        }
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .navbar-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+            .hero {
+                height: 80vh;
+            }
+            .parallax1, .parallax2 {
+                background-attachment: scroll;
+                height: 350px;
+            }
+            .carousel-item {
+                flex: 0 0 100%; /* Show 1 item on mobile */
+            }
+            .specialty-grid {
+                grid-template-columns: 1fr; /* 1 column on mobile */
+            }
+            .navbar {
+                padding: 1rem;
+            }
+            .about-section {
+                flex-direction: column;
+            }
+            .about-section img {
+                width: 100%;
+                height: auto;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.25rem;
+            }
+            .custom-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .marquee {
+                font-size: 1rem;
+            }
+            .reservation-form {
+                padding: 1.5rem;
+            }
+            .carousel-btn {
+                padding: 8px;
+                font-size: 1.2rem;
+            }
+            .marquee-message {
+                padding: 0 20px; /* Reduced spacing on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .custom-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            .carousel-btn {
+                padding: 6px;
+                font-size: 1rem;
+            }
+            .marquee {
+                padding: 10px 0;
+                font-size: 0.9rem;
+            }
+            .marquee-message {
+                padding: 0 20px; /* Reduced spacing on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar py-4 px-4 md:px-16">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Spice Haven</h1>
+            <div class="navbar-menu flex space-x-6 md:space-x-6 text-white">
+                <a href="#home" class="hover:text-[#f1c40f]">Home</a>
+                <a href="#about" class="hover:text-[#f1c40f]">About</a>
+                <a href="#specialty" class="hover:text-[#f1c40f]">Specialty</a>
+                <a href="#menu" class="hover:text-[#f1c40f]">Menu</a>
+                <a href="#reservation" class="hover:text-[#f1c40f]">Reservation</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-menu">
+                <a href="#home" class="hover:text-[#f1c40f]">Home</a>
+                <a href="#about" class="hover:text-[#f1c40f]">About</a>
+                <a href="#specialty" class="hover:text-[#f1c40f]">Specialty</a>
+                <a href="#menu" class="hover:text-[#f1c40f]">Menu</a>
+                <a href="#reservation" class="hover:text-[#f1c40f]">Reservation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Marquee at the End -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">Spice Haven</h1>
+            <p class="text-xl md:text-2xl mb-6 animate-fade-in" style="animation-delay: 0.2s;">Authentic North Indian Cuisine in the Heart of USA</p>
+            <div class="flex space-x-4 justify-center flex-wrap gap-4">
+                <a href="#reservation" class="custom-btn animate-fade-in" style="animation-delay: 0.4s;">Book a Table</a>
+                <a href="https://wa.me/1234567890?text=I'd%20like%20to%20place%20an%20order" target="_blank" class="custom-btn animate-fade-in" style="animation-delay: 0.6s;">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="marquee">
+            <div class="marquee-wrapper">
+                <div class="marquee-message">
+                    <i class="fas fa-star"></i>
+                    TODAY'S SPECIAL: Butter Chicken with Garlic Naan - $18.99
+                </div>
+                <div class="marquee-message">
+                    <i class="fas fa-hat-chef"></i>
+                    CHEF'S RECOMMENDATION: Lamb Rogan Josh
+                </div>
+                <div class="marquee-message">
+                    <i class="fas fa-cocktail"></i>
+                    HAPPY HOUR: 50% OFF on Selected Drinks (5-7 PM)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Two Columns) -->
+    <section id="about" class="py-16 px-4 md:px-16 bg-white">
+        <div class="max-w-6xl mx-auto flex about-section flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg" alt="Restaurant Interior" class="w-full h-96 object-cover rounded-lg shadow-lg">
+            </div>
+            <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
+                <h2 class="text-4xl font-bold mb-6 text-[#c0392b]">About Spice Haven</h2>
+                <p class="text-lg mb-8">Spice Haven brings the vibrant flavors of North India to the USA. Our chefs craft each dish with authentic spices and traditional techniques, offering a culinary journey through Punjab, Delhi, and beyond. From creamy Butter Chicken to sizzling Tandoori platters, every bite is a celebration of Indian heritage.</p>
+                <a href="#reservation" class="custom-btn">Reserve Your Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 1 -->
+    <section class="parallax1">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4">Experience the Taste of India</h2>
+            <p class="text-lg mt-4">Indulge in the rich aromas and bold flavors of North Indian cuisine. Our dishes are prepared with fresh ingredients and time-honored recipes, bringing the warmth and hospitality of India to your table. Whether you're craving spicy curries or smoky tandoori delights, Spice Haven promises a dining experience that tantalizes your taste buds.</p>
+        </div>
+    </section>
+
+    <!-- Specialty Section -->
+    <section id="specialty" class="py-16 px-4 md:px-16 bg-[#fff5e6]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center text-[#c0392b]">Our Specialties</h2>
+            <div class="specialty-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="specialty-item">
+                    <img src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg" alt="Butter Chicken" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#c0392b]">Butter Chicken</h3>
+                        <p class="text-gray-600">Our bestseller! Tender chicken simmered in a creamy tomato sauce, infused with aromatic spices.</p>
+                        <p class="font-bold mt-2">$14.99</p>
+                    </div>
+                    <span class="badge">Bestseller</span>
+                </div>
+                <div class="specialty-item">
+                    <img src="https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg" alt="Rogan Josh" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#c0392b]">Rogan Josh</h3>
+                        <p class="text-gray-600">Chef's special: Slow-cooked lamb in a fragrant, spiced yogurt sauce.</p>
+                        <p class="font-bold mt-2">$17.99</p>
+                    </div>
+                    <span class="badge">Chef's Special</span>
+                </div>
+                <div class="specialty-item">
+                    <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg" alt="Paneer Tikka" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#c0392b]">Paneer Tikka</h3>
+                        <p class="text-gray-600">A vegetarian favorite! Marinated paneer cubes grilled in a tandoor.</p>
+                        <p class="font-bold mt-2">$12.99</p>
+                    </div>
+                    <span class="badge">Bestseller</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section with Carousel -->
+    <section id="menu" class="py-16 px-4 md:px-16 bg-[#fff5e6]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center text-[#c0392b]">Our Menu</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev"><</button>
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <div class="menu-item bg-white p-6 rounded-lg shadow-lg">
+                            <img src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg" alt="Butter Chicken" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-bold text-[#c0392b]">Butter Chicken</h3>
+                            <p class="text-gray-600">Tender chicken in a rich, creamy tomato sauce with aromatic spices.</p>
+                            <p class="font-bold mt-2">$14.99</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="menu-item bg-white p-6 rounded-lg shadow-lg">
+                            <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg" alt="Paneer Tikka" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-bold text-[#c0392b]">Paneer Tikka</h3>
+                            <p class="text-gray-600">Marinated paneer cubes grilled to perfection in a tandoor.</p>
+                            <p class="font-bold mt-2">$12.99</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="menu-item bg-white p-6 rounded-lg shadow-lg">
+                            <img src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg" alt="Biryani" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-bold text-[#c0392b]">Chicken Biryani</h3>
+                            <p class="text-gray-600">Fragrant basmati rice cooked with spiced chicken and saffron.</p>
+                            <p class="font-bold mt-2">$16.99</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="menu-item bg-white p-6 rounded-lg shadow-lg">
+                            <img src="https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg" alt="Rogan Josh" class="w-full h-48 object-cover rounded-lg mb-4">
+                            <h3 class="text-xl font-bold text-[#c0392b]">Rogan Josh</h3>
+                            <p class="text-gray-600">Slow-cooked lamb in a fragrant, spiced yogurt sauce.</p>
+                            <p class="font-bold mt-2">$17.99</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next">></button>
+            </div>
+            <div class="text-center mt-12 flex justify-center space-x-4 flex-wrap gap-4">
+                <a href="https://wa.me/1234567890?text=I'd%20like%20to%20place%20an%20order" target="_blank" class="custom-btn">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </a>
+                <a href="/assets/menu.pdf" download class="custom-btn">Download Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <section class="parallax2">
+        <div class="relative z-10">
+            <h2 class="text-4xl font-bold">Savor the Spice</h2>
+            <p class="text-lg mt-4">Discover the essence of North Indian cuisine.</p>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-16 px-4 md:px-16 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center text-[#c0392b]">Book a Reservation</h2>
+            <div class="reservation-form p-8 rounded-lg">
+                <form id="reservation-form" onsubmit="handleReservation(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-lg font-medium text-[#c0392b]">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] bg-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-[#c0392b]">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] bg-white">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-lg font-medium text-[#c0392b]">Phone</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] bg-white">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-lg font-medium text-[#c0392b]">Date</label>
+                            <input type="date" id="date" name="date" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] bg-white">
+                        </div>
+                        <div>
+                            <label for="time" class="block text-lg font-medium text-[#c0392b]">Time</label>
+                            <input type="time" id="time" name="time" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] bg-white">
+                        </div>
+                        <div>
+                            <label for="guests" class="block text-lg font-medium text-[#c0392b]">Number of Guests</label>
+                            <select id="guests" name="guests" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] bg-white">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6+">6+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <button type="submit" class="custom-btn text-lg px-8">Reserve Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2c1a0d] text-[#fff5e6] py-12 px-4 md:px-16">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Spice Haven</h3>
+                <p>123 Flavor Street, Food City, USA</p>
+                <p>Email: info@spicehaven.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Follow Us</h3>
+                <div class="social-icons flex space-x-4">
+                    <a href="#" class="text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-2xl"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Hours</h3>
+                <p>Mon-Fri: 11 AM - 10 PM</p>
+                <p>Sat-Sun: 12 PM - 11 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60, // Adjusted for fixed navbar
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.mobile-menu').classList.remove('active');
+                }
+            });
+        });
+
+        // Handle reservation form submission
+        function handleReservation(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            console.log('Reservation Data:', data); // Simulate sending to server
+            alert('Reservation submitted successfully!');
+            form.reset();
+        }
+
+        // Carousel functionality for menu
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const itemWidth = items[0].offsetWidth;
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < items.length - 3) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Update carousel on window resize
+        window.addEventListener('resize', () => updateCarousel());
+
+        // Add scroll animation for elements
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.menu-item, .specialty-item, .parallax1, .parallax2, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
