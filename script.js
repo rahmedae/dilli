@@ -1,0 +1,127 @@
+// Initialize AOS
+AOS.init({
+    duration: 1000,
+    once: true
+});
+
+// Smooth Scrolling for Navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Specialties Carousel
+function scrollSpecialties(direction) {
+    const container = document.querySelector('.specialties-items');
+    const scrollAmount = 300; // Adjust based on item width
+    if (direction === 'left') {
+        container.scrollLeft -= scrollAmount;
+    } else {
+        container.scrollLeft += scrollAmount;
+    }
+}
+
+// Menu Carousels
+function scrollMenu(category, direction) {
+    const container = document.getElementById(`${category}Items`);
+    const scrollAmount = 1200; // Adjusted to scroll 4 items (4 * 300px)
+    if (direction === 'left') {
+        container.scrollLeft -= scrollAmount;
+    } else {
+        container.scrollLeft += scrollAmount;
+    }
+    // Reset auto-scroll timer on manual scroll
+    clearInterval(container.autoScroll);
+    container.autoScroll = setInterval(() => autoScrollMenu(category), 25000);
+}
+
+// Auto-scroll for Menu Carousels
+function autoScrollMenu(category) {
+    const container = document.getElementById(`${category}Items`);
+    const scrollAmount = 1200; // Adjusted to scroll 4 items (4 * 300px)
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    if (container.scrollLeft >= maxScroll) {
+        container.scrollLeft = 0; // Reset to start
+    } else {
+        container.scrollLeft += scrollAmount;
+    }
+}
+
+// Initialize auto-scroll for all menu carousels
+const categories = ['nonVeg', 'veg', 'sides', 'desserts', 'beverages'];
+categories.forEach(category => {
+    const container = document.getElementById(`${category}Items`);
+    container.autoScroll = setInterval(() => autoScrollMenu(category), 25000);
+
+    // Pause auto-scroll on hover
+    container.addEventListener('mouseenter', () => clearInterval(container.autoScroll));
+    container.addEventListener('mouseleave', () => {
+        container.autoScroll = setInterval(() => autoScrollMenu(category), 25000);
+    });
+});
+
+// Gallery Lightbox
+const galleryImages = document.querySelectorAll('.gallery-img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.querySelector('.close-lightbox');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+    });
+});
+
+closeLightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+
+// Show More Button for Gallery
+const showMoreBtn = document.getElementById('showMoreBtn');
+const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
+
+showMoreBtn.addEventListener('click', () => {
+    hiddenItems.forEach((item, index) => {
+        item.classList.remove('hidden');
+        item.setAttribute('data-aos-delay', (200 + index * 100).toString());
+        AOS.refresh();
+    });
+    showMoreBtn.style.display = 'none';
+});
+
+// Back to Top Button
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
