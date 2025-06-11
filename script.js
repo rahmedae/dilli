@@ -31,7 +31,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Specialties Carousel
 function scrollSpecialties(direction) {
     const container = document.querySelector('.specialties-items');
-    const scrollAmount = 300; // Adjust based on item width
+    const isMobile = window.innerWidth <= 768;
+    const scrollAmount = isMobile ? container.clientWidth : 300; // Full width on mobile, 300px on desktop
     if (direction === 'left') {
         container.scrollLeft -= scrollAmount;
     } else {
@@ -46,7 +47,7 @@ function scrollMenu(category, direction) {
     const isTablet = window.innerWidth <= 768 && window.innerWidth > 576;
     const itemWidth = 300; // Width of each menu item
     const padding = 20; // Total padding between items (10px each side)
-    const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth + padding)); // 320px (item + padding) for desktop, 620px for tablet, full width for mobile
+    const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth * 4 + padding * 3)); // 1260px for desktop (4 items), 620px for tablet (2 items), full width for mobile (1 item)
     
     if (direction === 'left') {
         container.scrollLeft -= scrollAmount;
@@ -65,7 +66,7 @@ function autoScrollMenu(category) {
     const isTablet = window.innerWidth <= 768 && window.innerWidth > 576;
     const itemWidth = 300;
     const padding = 20;
-    const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth + padding));
+    const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth * 4 + padding * 3));
     const maxScroll = container.scrollWidth - container.clientWidth;
 
     if (container.scrollLeft >= maxScroll) {
