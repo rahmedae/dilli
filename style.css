@@ -578,9 +578,9 @@ footer h5 {
     }
 
     .menu-item {
-        flex: 0 0 calc(100% - 10px); /* Account for padding */
-        min-width: calc(100% - 10px);
-        max-width: calc(100% - 10px);
+        flex: 0 0 calc(100% - 0px); /* Account for padding */
+        min-width: calc(100% - 0px);
+        max-width: calc(100% - 0px);
     }
 
     .menu-item .card {
