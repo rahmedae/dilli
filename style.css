@@ -538,8 +538,8 @@ footer h5 {
     }
 
     .menu-item {
-        flex: 0 0 300px; /* Fixed width for consistency */
-        min-width: 300px; /* Ensure consistent width */
+        flex: 0 0 250px; /* Fixed width for consistency */
+        min-width: 250px; /* Ensure consistent width */
     }
 
     h2 {
@@ -578,9 +578,9 @@ footer h5 {
     }
 
     .menu-item {
-        flex: 0 0 calc(100% - 20px); /* Account for padding */
-        min-width: calc(100% - 20px);
-        max-width: calc(100% - 20px);
+        flex: 0 0 calc(100% - 10px); /* Account for padding */
+        min-width: calc(100% - 10px);
+        max-width: calc(100% - 10px);
     }
 
     .menu-item .card {
