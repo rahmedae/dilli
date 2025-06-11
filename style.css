@@ -251,7 +251,7 @@ h2::after {
     padding: 20px 40px;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    width: calc(300px * 3 + 20px * 2); /* 3 items of 300px width + 2 gaps of 10px each = 940px */
+    width: calc(300px * 4 + 20px * 3); /* 4 items of 300px width + 3 gaps of 10px each = 1260px */
     max-width: 100%;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
@@ -520,6 +520,17 @@ footer h5 {
 
     .specialties-items {
         grid-template-columns: 1fr;
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
+    .specialty-item {
+        min-width: calc(100% - 20px); /* Full width minus padding */
+        max-width: 100%;
+    }
+
+    .specialty-item img {
+        width: 100%;
+        height: auto;
     }
 
     .menu-items {
@@ -569,5 +580,15 @@ footer h5 {
     .menu-item {
         flex: 0 0 calc(100% - 20px); /* Account for padding */
         min-width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+    }
+
+    .menu-item .card {
+        width: 100%;
+    }
+
+    .menu-item .card-img-top {
+        width: 100%;
+        height: auto;
     }
 }
