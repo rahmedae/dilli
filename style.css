@@ -261,7 +261,7 @@ h2::after {
 }
 
 .menu-item {
-    flex: 0 0 300px;
+    flex: 0 0 250px;
     padding: 0 10px;
     scroll-snap-align: start;
 }
