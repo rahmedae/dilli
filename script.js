@@ -17,6 +17,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: targetPosition,
                 behavior: 'smooth'
             });
+
+            // Close the navbar on mobile after clicking a link
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarToggler && navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
         }
     });
 });
@@ -35,7 +42,9 @@ function scrollSpecialties(direction) {
 // Menu Carousels
 function scrollMenu(category, direction) {
     const container = document.getElementById(`${category}Items`);
-    const scrollAmount = 1200; // Adjusted to scroll 4 items (4 * 300px)
+    const isMobile = window.innerWidth <= 768;
+    const scrollAmount = isMobile ? container.clientWidth : 300; // 300px for desktop (1 item), container width for mobile (1 item)
+    
     if (direction === 'left') {
         container.scrollLeft -= scrollAmount;
     } else {
@@ -49,7 +58,8 @@ function scrollMenu(category, direction) {
 // Auto-scroll for Menu Carousels
 function autoScrollMenu(category) {
     const container = document.getElementById(`${category}Items`);
-    const scrollAmount = 1200; // Adjusted to scroll 4 items (4 * 300px)
+    const isMobile = window.innerWidth <= 768;
+    const scrollAmount = isMobile ? container.clientWidth : 300; // 300px for desktop (1 item), container width for mobile (1 item)
     const maxScroll = container.scrollWidth - container.clientWidth;
 
     if (container.scrollLeft >= maxScroll) {
@@ -70,6 +80,31 @@ categories.forEach(category => {
     container.addEventListener('mouseleave', () => {
         container.autoScroll = setInterval(() => autoScrollMenu(category), 25000);
     });
+
+    // Enable touch swipe for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe(category);
+    });
+
+    function handleSwipe(category) {
+        const swipeThreshold = 50; // Minimum swipe distance to trigger
+        if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left
+            scrollMenu(category, 'right');
+        }
+        if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right
+            scrollMenu(category, 'left');
+        }
+    }
 });
 
 // Gallery Lightbox
