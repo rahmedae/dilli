@@ -251,7 +251,7 @@ h2::after {
     padding: 20px 40px;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    width: calc(300px * 4 + 20px * 3); /* 4 items of 300px width + 3 gaps of 10px each */
+    width: calc(300px * 3 + 20px * 2); /* 3 items of 300px width + 2 gaps of 10px each = 940px */
     max-width: 100%;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
@@ -523,7 +523,7 @@ footer h5 {
     }
 
     .menu-items {
-        width: 100%;
+        width: calc(300px * 2 + 20px * 1); /* 2 items of 300px width + 1 gap of 20px = 620px */
     }
 
     .menu-item {
@@ -561,12 +561,13 @@ footer h5 {
 }
 
 @media (max-width: 576px) {
+    .menu-items {
+        width: calc(100% - 20px); /* Full width minus padding */
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
     .menu-item {
         flex: 0 0 calc(100% - 20px); /* Account for padding */
         min-width: calc(100% - 20px);
-    }
-
-    .menu-items {
-        padding: 20px 10px; /* Reduce padding on smaller screens */
     }
 }
