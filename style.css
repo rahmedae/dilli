@@ -251,8 +251,9 @@ h2::after {
     padding: 20px 40px;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    width: calc(300px * 4 + 10px * 3); /* 4 items of 300px width + 3 gaps of 10px each */
+    width: calc(300px * 4 + 20px * 3); /* 4 items of 300px width + 3 gaps of 10px each */
     max-width: 100%;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .menu-items::-webkit-scrollbar {
@@ -526,8 +527,8 @@ footer h5 {
     }
 
     .menu-item {
-        flex: 0 0 100%;
-        min-width: 100%;
+        flex: 0 0 300px; /* Fixed width for consistency */
+        min-width: 300px; /* Ensure consistent width */
     }
 
     h2 {
@@ -556,5 +557,16 @@ footer h5 {
 
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-item {
+        flex: 0 0 calc(100% - 20px); /* Account for padding */
+        min-width: calc(100% - 20px);
+    }
+
+    .menu-items {
+        padding: 20px 10px; /* Reduce padding on smaller screens */
     }
 }
