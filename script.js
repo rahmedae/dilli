@@ -45,9 +45,9 @@ function scrollMenu(category, direction) {
     const container = document.getElementById(`${category}Items`);
     const isMobile = window.innerWidth <= 576;
     const isTablet = window.innerWidth <= 768 && window.innerWidth > 576;
-    const itemWidth = 300; // Width of each menu item
+    const itemWidth = 250; // Width of each menu item
     const padding = 20; // Total padding between items (10px each side)
-    const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth * 4 + padding * 3)); // 1260px for desktop (4 items), 620px for tablet (2 items), full width for mobile (1 item)
+    const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth * 4 + padding * 3)); // 1060px for desktop (4 items), 520px for tablet (2 items), full width for mobile (1 item)
     
     if (direction === 'left') {
         container.scrollLeft -= scrollAmount;
@@ -64,7 +64,7 @@ function autoScrollMenu(category) {
     const container = document.getElementById(`${category}Items`);
     const isMobile = window.innerWidth <= 576;
     const isTablet = window.innerWidth <= 768 && window.innerWidth > 576;
-    const itemWidth = 300;
+    const itemWidth = 250;
     const padding = 20;
     const scrollAmount = isMobile ? container.clientWidth : (isTablet ? (itemWidth * 2 + padding) : (itemWidth * 4 + padding * 3));
     const maxScroll = container.scrollWidth - container.clientWidth;
