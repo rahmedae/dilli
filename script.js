@@ -5,17 +5,27 @@ AOS.init({
 });
 
 // Lightbox functionality
-document.querySelectorAll('.food-img, .gallery-img').forEach(img => {
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.querySelector('.close-lightbox');
+
+document.querySelectorAll('.food-img, .gallery-img, .menu-img').forEach(img => {
     img.addEventListener('click', () => {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
         lightboxImg.src = img.getAttribute('data-src') || img.src;
         lightbox.style.display = 'flex';
     });
 });
 
-document.querySelector('.close-lightbox').addEventListener('click', () => {
-    document.getElementById('lightbox').style.display = 'none';
+// Close lightbox on button click
+closeLightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// Close lightbox on clicking outside the image
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
 });
 
 // Carousel functionality
