@@ -1,4 +1,4 @@
-/* General Styles (assumed from original style.css) */
+/* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -36,6 +36,55 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 30px;
 }
 
+/* Reverted Color Scheme */
+.bg-primary {
+    background-color: #e74c3c !important; /* Saffron/Orange shade */
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.btn-secondary {
+    background-color: #f39c12; /* Complementary orange shade */
+    border-color: #f39c12;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+.bg-secondary {
+    background-color: #34495e !important; /* Darker shade for contrast */
+}
+
+/* Section Headings (Restored) */
+.section-heading {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.section-heading::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #f39c12;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* Marquee */
 .marquee {
     overflow: hidden;
@@ -61,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 .category-heading {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .menu-container {
@@ -133,6 +183,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px 10px;
 }
 
+.badge-success {
+    background-color: #27ae60;
+}
+
+.badge-danger {
+    background-color: #e74c3c;
+}
+
+.badge-primary {
+    background-color: #f39c12;
+}
+
 /* Carousel Arrows */
 .carousel-arrow {
     position: absolute;
@@ -155,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 10px;
 }
 
-/* Lightbox */
+/* Lightbox (Updated for Mobile and Desktop) */
 .lightbox {
     display: none;
     position: fixed;
@@ -163,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -171,16 +233,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .lightbox-img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
 .close-lightbox {
     position: absolute;
     top: 20px;
     right: 30px;
-    color: white;
-    font-size: 2rem;
+    color: #fff;
+    font-size: 3rem;
     cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+    color: #e74c3c;
+}
+
+/* Full Menu Image Section (Restored) */
+.menu-image-container {
+    text-align: center;
+}
+
+.menu-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Catering Section */
@@ -199,6 +279,7 @@ h1, h2, h3, h4, h5, h6 {
 .category-subheading {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    color: #333;
 }
 
 /* Gallery Section */
@@ -253,6 +334,20 @@ footer a:hover {
     .hero p {
         font-size: 1.2rem;
     }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .close-lightbox {
+        font-size: 2.5rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-img {
+        max-height: 70%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -266,5 +361,15 @@ footer a:hover {
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+    }
+
+    .close-lightbox {
+        font-size: 2rem;
+        top: 10px;
+        right: 10px;
     }
 }
