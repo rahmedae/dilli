@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilli Delights</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dilli Delights - Authentic North Indian Cuisine</title>
+    <!-- Bootstrap CSS (for grid only) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- AOS for Animations -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Dilli Delights</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#home">Dilli Delights</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#specialties">Specialties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#specialties">Specialty</a></li>
                     <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#catering">Catering</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
@@ -39,22 +37,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero d-flex align-items-center justify-content-center text-center text-white">
-        <div>
-            <h1 data-aos="fade-up">Welcome to Dilli Delights</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Savor the Authentic Flavors of Delhi</p>
-            <a href="#menu" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="400">Explore Menu</a>
+    <section id="home" class="hero text-center text-white d-flex align-items-center">
+        <div class="container">
+            <h1 data-aos="fade-up">Dilli Delights</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Authentic North Indian Cuisine in the Heart of USA</p>
+            <a href="#menu" class="btn btn-primary mr-2" data-aos="fade-up" data-aos-delay="400">Explore Menu</a>
+            <a href="https://wa.me/1234567890" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="600">Order via WhatsApp</a>
         </div>
     </section>
 
     <!-- Offers Section -->
-    <section id="offers" class="py-5 bg-primary text-white text-center section-spacing">
+    <section id="offers" class="py-3 bg-primary text-white">
         <div class="container">
             <div class="marquee">
                 <div class="marquee-content">
-                    <span>Flat 20% OFF on First Order! 🎉</span>
-                    <span>Free Dessert with Every Meal This Week! 🍮</span>
-                    <span>Special Family Combo at ₹999! 👨‍👩‍👧‍👦</span>
+                    <span>TODAY'S SPECIAL: Butter Chicken with Garlic Naan - $18.99</span>
+                    <span>CHEF'S RECOMMENDATION: Lamb Rogan Josh</span>
+                    <span>HAPPY HOUR: 50% OFF on Selected Drinks (5-7 PM)</span>
                 </div>
             </div>
         </div>
@@ -63,14 +62,14 @@
     <!-- About Section -->
     <section id="about" class="py-5 section-spacing">
         <div class="container">
-            <h2 data-aos="fade-up">About Us</h2>
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
-                    <img src="https://placehold.co/600x400?text=About+Us" alt="About Us" class="img-fluid rounded">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2>About Dilli Delights</h2>
+                    <p>Dilli Delights was born from a journey of passion, perseverance, and purpose. Founded by Hasan Rajabi, a PhD scholar and dedicated cancer researcher with over 25 years of experience, this restaurant blends the science of precision with the art of cooking. Inspired by his mother’s recipes from Delhi and Banaras, Hasan brings authentic North Indian flavors crafted with dedication and quality. Join us on this delicious journey where every meal feels like home.</p>
+                    <a href="#menu" class="btn btn-primary">Explore Menu</a>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
-                    <p>Welcome to Dilli Delights, where we bring the vibrant flavors of Delhi to your plate. Our passion for authentic Indian cuisine drives us to create dishes that are rich in tradition and taste. From street-style chaats to royal Mughlai delicacies, every dish is crafted with love and the finest ingredients.</p>
-                    <p>Join us on a culinary journey that celebrates the heart of Delhi's food culture.</p>
+                    <img src="https://placehold.co/500x300" alt="About Dilli Delights" class="img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -78,58 +77,42 @@
 
     <!-- Experience Section -->
     <section id="experience" class="py-5 bg-light section-spacing">
-        <div class="container">
-            <h2 data-aos="fade-up">Our Experience</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="text-center">
-                        <h3>20+</h3>
-                        <p>Years of Culinary Excellence</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-center">
-                        <h3>50K+</h3>
-                        <p>Happy Customers Served</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="text-center">
-                        <h3>100+</h3>
-                        <p>Authentic Delhi Recipes</p>
-                    </div>
-                </div>
-            </div>
+        <div class="container text-center">
+            <h2 data-aos="fade-up">Experience the Taste of India</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Indulge in the rich aromas and bold flavors of North Indian cuisine, prepared with fresh ingredients and time-honored recipes. From spicy curries to smoky tandoori delights, Dilli Delights promises a dining experience that tantalizes your taste buds.</p>
         </div>
     </section>
 
     <!-- Specialties Section -->
     <section id="specialties" class="py-5 section-spacing">
         <div class="container">
-            <h2 data-aos="fade-up">Our Specialties</h2>
+            <h2 class="text-center" data-aos="fade-up">Our Specialties</h2>
             <div class="specialties-container">
-                <button class="carousel-arrow carousel-arrow-left" onclick="scrollSpecialties('left')">&larr;</button>
+                <button class="carousel-arrow carousel-arrow-left" onclick="scrollSpecialties('left')">❮</button>
                 <div class="specialties-items">
-                    <div class="specialty-item" data-aos="fade-up">
-                        <img src="https://placehold.co/300x200?text=Butter+Chicken" alt="Butter Chicken">
-                        <h4>Butter Chicken</h4>
-                        <p>A creamy, tomato-based curry with tender chicken.</p>
+                    <div class="specialty-item text-center">
+                        <img src="https://placehold.co/300x200" alt="Butter Chicken" class="img-fluid rounded">
+                        <h3>Butter Chicken</h3>
+                        <p>Our bestseller! Tender chicken simmered in a creamy tomato sauce, infused with aromatic spices.</p>
+                        <p class="price">$14.99</p>
                         <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                     </div>
-                    <div class="specialty-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://placehold.co/300x200?text=Chole+Bhature" alt="Chole Bhature">
-                        <h4>Chole Bhature</h4>
-                        <p>Spicy chickpeas with fluffy deep-fried bread.</p>
-                        <span class="badge badge-primary"><i class="fas fa-leaf"></i> Vegetarian</span>
+                    <div class="specialty-item text-center">
+                        <img src="https://placehold.co/300x200" alt="Rogan Josh" class="img-fluid rounded">
+                        <h3>Rogan Josh</h3>
+                        <p>Chef's special: Slow-cooked lamb in a fragrant, spiced yogurt sauce.</p>
+                        <p class="price">$17.99</p>
+                        <span class="badge badge-primary"><i class="fas fa-utensils"></i> Chef's Special</span>
                     </div>
-                    <div class="specialty-item" data-aos="fade-up" data-aos-delay="400">
-                        <img src="https://placehold.co/300x200?text=Paani+Puri" alt="Paani Puri">
-                        <h4>Paani Puri</h4>
-                        <p>Tangy and spicy street-style chaat.</p>
-                        <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
+                    <div class="specialty-item text-center">
+                        <img src="https://placehold.co/300x200" alt="Paneer Tikka" class="img-fluid rounded">
+                        <h3>Paneer Tikka</h3>
+                        <p>A vegetarian favorite! Marinated paneer cubes grilled in a tandoor.</p>
+                        <p class="price">$12.99</p>
+                        <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                     </div>
                 </div>
-                <button class="carousel-arrow carousel-arrow-right" onclick="scrollSpecialties('right')">&rarr;</button>
+                <button class="carousel-arrow carousel-arrow-right" onclick="scrollSpecialties('right')">❯</button>
             </div>
         </div>
     </section>
@@ -137,256 +120,426 @@
     <!-- Menu Section -->
     <section id="menu" class="py-5 bg-light section-spacing">
         <div class="container">
-            <h2 data-aos="fade-up">Our Menu</h2>
-            <!-- Non-Veg -->
-            <div class="mb-5">
-                <h3 class="category-heading" data-aos="fade-up">Non-Veg</h3>
-                <div class="menu-container">
-                    <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('nonVeg', 'left')">&larr;</button>
-                    <div class="menu-items" id="nonVegItems">
-                        <div class="menu-item" data-aos="fade-up">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Chicken+Biryani" class="card-img-top" alt="Chicken Biryani">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Chicken Biryani</h5>
-                                    <p class="card-text">Aromatic rice with succulent chicken.</p>
-                                    <p class="price">₹350</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Mutton+Rogan+Josh" class="card-img-top" alt="Mutton Rogan Josh">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Mutton Rogan Josh</h5>
-                                    <p class="card-text">Rich and spicy mutton curry.</p>
-                                    <p class="price">₹450</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Chicken+Tikka" class="card-img-top" alt="Chicken Tikka">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Chicken Tikka</h5>
-                                    <p class="card-text">Grilled chicken in spicy marinade.</p>
-                                    <p class="price">₹300</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Fish+Fry" class="card-img-top" alt="Fish Fry">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Fish Fry</h5>
-                                    <p class="card-text">Crispy fried fish with spices.</p>
-                                    <p class="price">₹400</p>
-                                </div>
+            <h2 class="text-center" data-aos="fade-up">Our Menu</h2>
+
+            <!-- Non-Vegetarian -->
+            <h3 class="category-heading mt-5" data-aos="fade-up">Non-Vegetarian Meals</h3>
+            <p class="text-muted mb-4 text-center" data-aos="fade-up" data-aos-delay="200">Served with rice/naan, salad, and sauce, excludes biryani</p>
+            <div class="menu-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('nonVeg', 'left')">❮</button>
+                <div class="menu-items" id="nonVegItems">
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Chicken Tikka">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Tikka</h5>
+                                <p class="card-text">Juicy chunks of chicken marinated in yogurt and spices, grilled to perfection.</p>
+                                <p class="price">$15.99</p>
+                                <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('nonVeg', 'right')">&rarr;</button>
-                </div>
-            </div>
-            <!-- Veg -->
-            <div class="mb-5">
-                <h3 class="category-heading" data-aos="fade-up">Veg</h3>
-                <div class="menu-container">
-                    <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('veg', 'left')">&larr;</button>
-                    <div class="menu-items" id="vegItems">
-                        <div class="menu-item" data-aos="fade-up">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Paneer+Butter+Masala" class="card-img-top" alt="Paneer Butter Masala">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Paneer Butter Masala</h5>
-                                    <p class="card-text">Creamy paneer in tomato gravy.</p>
-                                    <p class="price">₹280</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Aloo+Gobi" class="card-img-top" alt="Aloo Gobi">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Aloo Gobi</h5>
-                                    <p class="card-text">Potato and cauliflower curry.</p>
-                                    <p class="price">₹200</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Dal+Makhani" class="card-img-top" alt="Dal Makhani">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Dal Makhani</h5>
-                                    <p class="card-text">Rich and creamy lentil dish.</p>
-                                    <p class="price">₹250</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Veg+Biryani" class="card-img-top" alt="Veg Biryani">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Veg Biryani</h5>
-                                    <p class="card-text">Aromatic rice with mixed veggies.</p>
-                                    <p class="price">₹300</p>
-                                </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Grilled Chicken">
+                            <div class="card-body">
+                                <h5 class="card-title">Grilled Chicken</h5>
+                                <p class="card-text">Juicy, tender chicken marinated in bold Indian spices and grilled.</p>
+                                <p class="price">$13.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('veg', 'right')">&rarr;</button>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Chicken Tikka Masala">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Tikka Masala</h5>
+                                <p class="card-text">Tender chicken in a spiced tomato-based gravy.</p>
+                                <p class="price">$15.99</p>
+                                <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Butter Chicken">
+                            <div class="card-body">
+                                <h5 class="card-title">Butter Chicken</h5>
+                                <p class="card-text">Creamy, rich, and perfectly spiced chicken that melts in your mouth.</p>
+                                <p class="price">$15.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Kadhai Chicken">
+                            <div class="card-body">
+                                <h5 class="card-title">Kadhai Chicken</h5>
+                                <p class="card-text">Chicken simmered in a spicy tomato-based gravy with fresh spices.</p>
+                                <p class="price">$15.99</p>
+                                <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Bell Pepper Chicken">
+                            <div class="card-body">
+                                <h5 class="card-title">Bell Pepper Chicken</h5>
+                                <p class="card-text">Chicken stir-fried with tomatoes and bell peppers in savory sauces.</p>
+                                <p class="price">$15.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Grilled Lamb Chops">
+                            <div class="card-body">
+                                <h5 class="card-title">Grilled Lamb Chops</h5>
+                                <p class="card-text">Juicy lamb chops marinated in spices and grilled to perfection (2 pieces).</p>
+                                <p class="price">$18.99</p>
+                                <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Grilled Lamb">
+                            <div class="card-body">
+                                <h5 class="card-title">Grilled Lamb</h5>
+                                <p class="card-text">Succulent lamb pieces marinated and grilled to tender perfection.</p>
+                                <p class="price">$16.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Chicken Biryani">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Biryani</h5>
+                                <p class="card-text">Tender chicken with fragrant basmati rice and aromatic spices.</p>
+                                <p class="price">$15.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Mutton Biryani">
+                            <div class="card-body">
+                                <h5 class="card-title">Mutton Biryani</h5>
+                                <p class="card-text">Aromatic basmati rice layered with tender mutton and spices.</p>
+                                <p class="price">$18.99</p>
+                                <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Chicken Korma">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Korma</h5>
+                                <p class="card-text">Tender chicken slow-cooked in a creamy yogurt-based gravy.</p>
+                                <p class="price">$15.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Roasted Chicken">
+                            <div class="card-body">
+                                <h5 class="card-title">Roasted Chicken</h5>
+                                <p class="card-text">Succulent chicken pieces slow-roasted to golden-brown perfection.</p>
+                                <p class="price">$15.99</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('nonVeg', 'right')">❯</button>
             </div>
+
+            <!-- Vegetarian -->
+            <h3 class="category-heading mt-5" data-aos="fade-up">Vegetarian Meals</h3>
+            <p class="text-muted mb-4 text-center" data-aos="fade-up" data-aos-delay="200">Served with rice/naan and yellow lentil</p>
+            <div class="menu-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('veg', 'left')">❮</button>
+                <div class="menu-items" id="vegItems">
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Matar Paneer">
+                            <div class="card-body">
+                                <h5 class="card-title">Matar Paneer</h5>
+                                <p class="card-text">Paneer cubes and peas in a spiced tomato-onion gravy.</p>
+                                <p class="price">$12.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Palak Paneer">
+                            <div class="card-body">
+                                <h5 class="card-title">Palak Paneer</h5>
+                                <p class="card-text">Creamy spinach with paneer cubes and mild spices.</p>
+                                <p class="price">$12.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Aaloo Gobi">
+                            <div class="card-body">
+                                <h5 class="card-title">Aaloo Gobi</h5>
+                                <p class="card-text">Potatoes and cauliflower sautéed with turmeric and spices.</p>
+                                <p class="price">$12.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Mix Vegetable Curry">
+                            <div class="card-body">
+                                <h5 class="card-title">Mix Vegetable Curry</h5>
+                                <p class="card-text">Seasonal vegetables in a spiced tomato-onion gravy.</p>
+                                <p class="price">$12.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Choley">
+                            <div class="card-body">
+                                <h5 class="card-title">Choley</h5>
+                                <p class="card-text">Spicy chickpeas in a rich tomato-based gravy.</p>
+                                <p class="price">$12.99</p>
+                                <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Rajma Curry">
+                            <div class="card-body">
+                                <h5 class="card-title">Rajma Curry</h5>
+                                <p class="card-text">Red kidney beans in a spiced tomato-onion sauce.</p>
+                                <p class="price">$12.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Tadka Daal">
+                            <div class="card-body">
+                                <h5 class="card-title">Tadka Daal</h5>
+                                <p class="card-text">Yellow lentils tempered with mustard seeds and spices.</p>
+                                <p class="price">$6.99</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('veg', 'right')">❯</button>
+            </div>
+
             <!-- Sides -->
-            <div class="mb-5">
-                <h3 class="category-heading" data-aos="fade-up">Sides</h3>
-                <div class="menu-container">
-                    <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('sides', 'left')">&larr;</button>
-                    <div class="menu-items" id="sidesItems">
-                        <div class="menu-item" data-aos="fade-up">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Naan" class="card-img-top" alt="Naan">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Naan</h5>
-                                    <p class="card-text">Soft and fluffy Indian bread.</p>
-                                    <p class="price">₹50</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Raita" class="card-img-top" alt="Raita">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Raita</h5>
-                                    <p class="card-text">Cool yogurt with veggies.</p>
-                                    <p class="price">₹80</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Salad" class="card-img-top" alt="Salad">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Salad</h5>
-                                    <p class="card-text">Fresh veggies with dressing.</p>
-                                    <p class="price">₹100</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Papad" class="card-img-top" alt="Papad">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Papad</h5>
-                                    <p class="card-text">Crispy Indian cracker.</p>
-                                    <p class="price">₹30</p>
-                                </div>
+            <h3 class="category-heading mt-5" data-aos="fade-up">Sides</h3>
+            <div class="menu-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('sides', 'left')">❮</button>
+                <div class="menu-items" id="sidesItems">
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Chicken Wings">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Wings (6 Pcs)</h5>
+                                <p class="card-text">Crispy, golden-fried wings with a zesty spice blend.</p>
+                                <p class="price">$6.99</p>
+                                <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('sides', 'right')">&rarr;</button>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Chicken Kebabs">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Kebabs (2 Pcs)</h5>
+                                <p class="card-text">Minced chicken with herbs and spices, grilled.</p>
+                                <p class="price">$6.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Beef Kebabs">
+                            <div class="card-body">
+                                <h5 class="card-title">Beef Kebabs (2 Pcs)</h5>
+                                <p class="card-text">Ground beef with onions, garlic, and spices, grilled.</p>
+                                <p class="price">$8.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="French Fries">
+                            <div class="card-body">
+                                <h5 class="card-title">French Fries</h5>
+                                <p class="card-text">Crispy fries tossed in aromatic spices.</p>
+                                <p class="price">$5.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Veg Samosa">
+                            <div class="card-body">
+                                <h5 class="card-title">Veg Samosa</h5>
+                                <p class="card-text">Crispy pastry filled with spiced potatoes and peas.</p>
+                                <p class="price">$2.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Onion Pakoras">
+                            <div class="card-body">
+                                <h5 class="card-title">Onion Pakoras (6 Pcs)</h5>
+                                <p class="card-text">Crispy onion fritters with chickpea flour.</p>
+                                <p class="price">$6.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Spinach Pakoras">
+                            <div class="card-body">
+                                <h5 class="card-title">Spinach Pakoras (6 Pcs)</h5>
+                                <p class="card-text">Light and crispy spinach fritters with spices.</p>
+                                <p class="price">$6.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Flavored Rice">
+                            <div class="card-body">
+                                <h5 class="card-title">Flavored Rice</h5>
+                                <p class="card-text">Basmati rice cooked with ghee and saffron.</p>
+                                <p class="price">$6.99</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('sides', 'right')">❯</button>
             </div>
+
             <!-- Desserts -->
-            <div class="mb-5">
-                <h3 class="category-heading" data-aos="fade-up">Desserts</h3>
-                <div class="menu-container">
-                    <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('desserts', 'left')">&larr;</button>
-                    <div class="menu-items" id="dessertsItems">
-                        <div class="menu-item" data-aos="fade-up">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Gulab+Jamun" class="card-img-top" alt="Gulab Jamun">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Gulab Jamun</h5>
-                                    <p class="card-text">Sweet dumplings in syrup.</p>
-                                    <p class="price">₹120</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Rasmalai" class="card-img-top" alt="Rasmalai">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Rasmalai</h5>
-                                    <p class="card-text">Soft paneer in sweet milk.</p>
-                                    <p class="price">₹150</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Kheer" class="card-img-top" alt="Kheer">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Kheer</h5>
-                                    <p class="card-text">Traditional rice pudding.</p>
-                                    <p class="price">₹100</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Jalebi" class="card-img-top" alt="Jalebi">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Jalebi</h5>
-                                    <p class="card-text">Crispy swirls in sugar syrup.</p>
-                                    <p class="price">₹130</p>
-                                </div>
+            <h3 class="category-heading mt-5" data-aos="fade-up">Desserts</h3>
+            <div class="menu-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('desserts', 'left')">❮</button>
+                <div class="menu-items" id="dessertsItems">
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Gulab Jamun">
+                            <div class="card-body">
+                                <h5 class="card-title">Gulab Jamun (2 Pcs)</h5>
+                                <p class="card-text">Soft, syrup-soaked milk dumplings, warm and sweet.</p>
+                                <p class="price">$4.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('desserts', 'right')">&rarr;</button>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Jalebi">
+                            <div class="card-body">
+                                <h5 class="card-title">Jalebi (6 Pcs)</h5>
+                                <p class="card-text">Crispy, spiral-shaped sweets soaked in sugar syrup.</p>
+                                <p class="price">$2.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Milk Cake">
+                            <div class="card-body">
+                                <h5 class="card-title">Milk Cake (2 Pcs)</h5>
+                                <p class="card-text">Rich, dense milk-based fudge with caramelized flavor.</p>
+                                <p class="price">$5.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Gajar Halwa">
+                            <div class="card-body">
+                                <h5 class="card-title">Gajar Halwa</h5>
+                                <p class="card-text">Warm, creamy carrot pudding, slow-cooked.</p>
+                                <p class="price">$4.99</p>
+                                <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('desserts', 'right')">❯</button>
             </div>
+
             <!-- Beverages -->
-            <div class="mb-5">
-                <h3 class="category-heading" data-aos="fade-up">Beverages</h3>
-                <div class="menu-container">
-                    <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('beverages', 'left')">&larr;</button>
-                    <div class="menu-items" id="beveragesItems">
-                        <div class="menu-item" data-aos="fade-up">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Mango+Lassi" class="card-img-top" alt="Mango Lassi">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Mango Lassi</h5>
-                                    <p class="card-text">Sweet and creamy yogurt drink.</p>
-                                    <p class="price">₹120</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Masala+Chai" class="card-img-top" alt="Masala Chai">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Masala Chai</h5>
-                                    <p class="card-text">Spiced Indian tea.</p>
-                                    <p class="price">₹80</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Nimbu+Pani" class="card-img-top" alt="Nimbu Pani">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Nimbu Pani</h5>
-                                    <p class="card-text">Refreshing lemon drink.</p>
-                                    <p class="price">₹60</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="card">
-                                <img src="https://placehold.co/250x200?text=Thandai" class="card-img-top" alt="Thandai">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Thandai</h5>
-                                    <p class="card-text">Traditional spiced milk drink.</p>
-                                    <p class="price">₹150</p>
-                                </div>
+            <h3 class="category-heading mt-5" data-aos="fade-up">Beverages</h3>
+            <div class="menu-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="scrollMenu('beverages', 'left')">❮</button>
+                <div class="menu-items" id="beveragesItems">
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Mango Lassi">
+                            <div class="card-body">
+                                <h5 class="card-title">Mango Lassi</h5>
+                                <p class="card-text">Refreshing blend of mangoes, yogurt, and cardamom.</p>
+                                <p class="price">$5.99</p>
+                                <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('beverages', 'right')">&rarr;</button>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Indian Chai">
+                            <div class="card-body">
+                                <h5 class="card-title">Indian Chai</h5>
+                                <p class="card-text">Spiced tea with milk, cardamom, and ginger.</p>
+                                <p class="price">$1.49</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Soda">
+                            <div class="card-body">
+                                <h5 class="card-title">Soda</h5>
+                                <p class="card-text">Refreshing carbonated drink.</p>
+                                <p class="price">$1.49</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="card">
+                            <img src="https://placehold.co/250x200" class="card-img-top" alt="Water">
+                            <div class="card-body">
+                                <h5 class="card-title">Water</h5>
+                                <p class="card-text">Pure and refreshing bottled water.</p>
+                                <p class="price">$1.49</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-arrow carousel-arrow-right" onclick="scrollMenu('beverages', 'right')">❯</button>
+            </div>
+
+            <!-- Full Menu Image -->
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <h3>Full Menu Image</h3>
+                <img src="images/menu.jpg" alt="Dilli Delights Menu" class="img-fluid menu-image" loading="lazy">
+                <a href="https://wa.me/1234567890" class="btn btn-secondary mt-3 mr-2">Order via WhatsApp</a>
+                <a href="images/menu.jpg" download class="btn btn-outline-primary mt-3">Download Full Menu</a>
             </div>
         </div>
     </section>
@@ -394,50 +547,267 @@
     <!-- Catering Section -->
     <section id="catering" class="py-5 section-spacing">
         <div class="container">
-            <h2 data-aos="fade-up">Catering Services</h2>
-            <div class="row">
-                <!-- Small Events -->
-                <div class="col-md-4 mb-4 catering-category">
-                    <div class="catering-card" data-aos="fade-up">
-                        <h3 class="category-subheading">Small Events</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Up to 50 guests</li>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Choice of 5 dishes</li>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Basic setup included</li>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Starting at ₹10,000</li>
-                        </ul>
-                        <div class="contact-query">
-                            <a href="tel:+911234567890" class="btn btn-primary">Contact for Query: +91-123-456-7890</a>
+            <h2 class="text-center" data-aos="fade-up">Catering Menu</h2>
+            <p class="text-center text-muted mb-5" data-aos="fade-up" data-aos-delay="200">Half sheet serves ~12-15 people, biryani/pulao serves 8-10 people</p>
+
+            <!-- Vegetarian Catering -->
+            <div class="catering-category mb-5">
+                <h3 class="category-heading" data-aos="fade-up">Vegetarian</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Matar Paneer</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Shahi Paneer</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Palak Paneer</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Palak Paneer Saag</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Malai Kofta</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Mix Veg</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Karahi Paneer</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Baingan Bharta</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Paneer Bhurji</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Aloo Gobi</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Bhindi</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Aloo Matar</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Baingan, Palak & Beans</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Choley (Chickpeas)</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Rajma</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Dal Makhani</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Toor Dal with Tadka</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Veg Keema Masala</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Veg Shami Kebab</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Aloo Palak</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Kadhi</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Lauki Kalonji</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Karela Kalonji</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Large Events -->
-                <div class="col-md-4 mb-4 catering-category">
-                    <div class="catering-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="category-subheading">Large Events</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Up to 200 guests</li>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Choice of 10 dishes</li>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Full setup with staff</li>
-                            <li><i class="fas fa-check-circle catering-icon"></i> Starting at ₹30,000</li>
-                        </ul>
-                        <div class="contact-query">
-                            <a href="tel:+911234567890" class="btn btn-primary">Contact for Query: +91-123-456-7890</a>
+            </div>
+
+            <!-- Vegetarian Pulao/Biryani -->
+            <div class="catering-category mb-5">
+                <h4 class="category-subheading" data-aos="fade-up">Pulao/Biryani</h4>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Mix Veg Biryani</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Matar Pulao</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Mix Veg Pulao</li>
+                                <li><i class="fas fa-leaf catering-icon"></i> Zeera Rice</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-leaf catering-icon"></i> Fragrant Basmati Rice</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Special Notes -->
-                <div class="col-md-4 mb-4 catering-category">
-                    <div class="special-notes-card" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="category-subheading">Special Notes</h3>
-                        <ul>
-                            <li><i class="fas fa-info-circle note-icon"></i> Custom menus available</li>
-                            <li><i class="fas fa-info-circle note-icon"></i> Dietary options on request</li>
-                            <li><i class="fas fa-info-circle note-icon"></i> 48-hour advance booking</li>
-                            <li><i class="fas fa-info-circle note-icon"></i> Delivery charges apply</li>
-                        </ul>
-                        <div class="contact-query">
-                            <a href="tel:+911234567890" class="btn btn-primary">Contact for Query: +91-123-456-7890</a>
+            </div>
+
+            <!-- Chicken Catering -->
+            <div class="catering-category mb-5">
+                <h3 class="category-heading" data-aos="fade-up">Chicken</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Stew</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Mughlai Chicken</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Shahi</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Qorma</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Do-Pyaza</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Butter Chicken</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Karahi Chicken</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Bell Pepper Chicken</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Tikka (Boneless)</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Roasted Chicken (Full Leg)</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Roasted Chicken (Thigh and Leg)</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mutton/Lamb/Beef Catering -->
+            <div class="catering-category mb-5">
+                <h3 class="category-heading" data-aos="fade-up">Mutton/Lamb/Beef</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Mutton Korma</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Mutton Do-Pyaza</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Shahi Mutton</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Mutton Saag</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chana Dal Gosht</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Nehari</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Beef Kofta</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Fish Fry (Tilapia Fillets)</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Beef Keema</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Kebab Chicken</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Beef Gilawati</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Shami Kebab</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biryani/Pulao Catering -->
+            <div class="catering-category mb-5">
+                <h4 class="category-subheading" data-aos="fade-up">Biryani/Pulao</h4>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Mutton Biryani</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Biryani</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Tikka Biryani</li>
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Chicken Yakhni Pulao</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="catering-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-drumstick-bite catering-icon"></i> Mutton Yakhni Pulao</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Notes -->
+            <div class="catering-category">
+                <h4 class="category-subheading" data-aos="fade-up">Special Notes</h4>
+                <div class="row">
+                    <div class="col-md-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="special-notes-card">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-exclamation-circle note-icon"></i> Beef Paya, Nehari, and Goat Liver (Kaleji) available on order!</li>
+                                <li><i class="fas fa-exclamation-circle note-icon"></i> Desserts: Gulab Jamun, Jalebi, Kheer, Gajar Halwa, Milk Cake (call for details).</li>
+                                <li><i class="fas fa-exclamation-circle note-icon"></i> Appetizers and Chaat: Samosa, Tikki Chaat, Samosa Chaat, Vada, Dahi Vada, Golgappas, Tamatar Chaat, Onion Pakoras, Spinach Pakoras, Paneer Pakora, Bhel Puri (call for details).</li>
+                            </ul>
+                            <div class="contact-query">
+                                <a href="tel:+17813520880" class="btn btn-primary">Contact for Query: 781-352-0880</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -445,61 +815,79 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Photo Gallery Section -->
     <section id="gallery" class="py-5 bg-light section-spacing">
         <div class="container">
-            <h2 data-aos="fade-up">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="fade-up">
-                    <img src="https://placehold.co/300x200?text=Gallery+1" alt="Gallery Image 1" class="gallery-img">
-                </div>
+            <h2 class="text-center" data-aos="fade-up">Photo Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid">
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://placehold.co/300x200?text=Gallery+2" alt="Gallery Image 2" class="gallery-img">
+                    <img src="https://placehold.co/400x300" alt="Gallery Image 1" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://placehold.co/400x400" alt="Gallery Image 2" class="gallery-img">
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://placehold.co/300x200?text=Gallery+3" alt="Gallery Image 3" class="gallery-img">
+                    <img src="https://placehold.co/400x300" alt="Gallery Image 3" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://placehold.co/400x400" alt="Gallery Image 4" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://placehold.co/400x300" alt="Gallery Image 5" class="gallery-img">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://placehold.co/400x400" alt="Gallery Image 6" class="gallery-img">
+                </div>
+                <!-- Hidden items -->
+                <div class="gallery-item hidden" data-aos="fade-up">
+                    <img src="https://placehold.co/400x300" alt="Gallery Image 7" class="gallery-img">
                 </div>
                 <div class="gallery-item hidden" data-aos="fade-up">
-                    <img src="https://placehold.co/300x200?text=Gallery+4" alt="Gallery Image 4" class="gallery-img">
+                    <img src="https://placehold.co/400x400" alt="Gallery Image 8" class="gallery-img">
                 </div>
                 <div class="gallery-item hidden" data-aos="fade-up">
-                    <img src="https://placehold.co/300x200?text=Gallery+5" alt="Gallery Image 5" class="gallery-img">
+                    <img src="https://placehold.co/400x300" alt="Gallery Image 9" class="gallery-img">
                 </div>
                 <div class="gallery-item hidden" data-aos="fade-up">
-                    <img src="https://placehold.co/300x200?text=Gallery+6" alt="Gallery Image 6" class="gallery-img">
+                    <img src="https://placehold.co/400x400" alt="Gallery Image 10" class="gallery-img">
+                </div>
+                <div class="gallery-item hidden" data-aos="fade-up">
+                    <img src="https://placehold.co/400x300" alt="Gallery Image 11" class="gallery-img">
+                </div>
+                <div class="gallery-item hidden" data-aos="fade-up">
+                    <img src="https://placehold.co/400x400" alt="Gallery Image 12" class="gallery-img">
                 </div>
             </div>
             <div class="text-center mt-4">
-                <button id="showMoreBtn" class="btn btn-outline-primary">Show More</button>
+                <button id="showMoreBtn" class="btn btn-primary">Show More</button>
             </div>
         </div>
     </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">×</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
     <!-- Footer -->
-    <footer class="py-5 text-white">
+    <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <h5>Dilli Delights</h5>
-                    <p>Experience the true taste of Delhi with our authentic dishes.</p>
+                    <p>734 Washington Street, Norwood, MA<br>Email: info@dillidelights.com<br>Phone: 781-352-0880</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-white">Home</a></li>
-                        <li><a href="#menu" class="text-white">Menu</a></li>
-                        <li><a href="#catering" class="text-white">Catering</a></li>
-                    </ul>
+                <div class="col-md-4 text-center">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Contact Us</h5>
-                    <p><i class="fas fa-phone-alt"></i> +91-123-456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@dillidelights.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123, Delhi Street, India</p>
+                <div class="col-md-4">
+                    <h5>Hours</h5>
+                    <p>Wed-Thu: 12 PM - 8:30 PM<br>Fri-Sat: 12 PM - 9 PM<br>Sun: 12 PM - 9 PM<br>Mon-Tue: Closed</p>
                 </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2025 Dilli Delights. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -507,17 +895,14 @@
     <!-- Back to Top Button -->
     <button id="back-to-top" class="btn btn-primary"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img id="lightbox-img" src="" alt="Lightbox Image">
-    </div>
-
-    <!-- Bootstrap JS and Dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- jQuery (required for Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper.js (required for Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
     <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
