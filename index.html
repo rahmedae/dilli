@@ -14,6 +14,28 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adjust marquee animation speed */
+        .marquee-content {
+            animation: marquee 30s linear infinite; /* Slower speed (was likely faster) */
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        /* Ensure carousel moves one item at a time */
+        .menu-items {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+        .menu-item {
+            flex: 0 0 300px; /* Fixed width for one item at a time */
+            scroll-snap-align: start;
+            margin-right: 15px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -109,7 +131,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Chicken Tikka Masala" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Chicken Tikka Masala</h5>
-                                <p class="card-text">A rich, creamy gravy that perfectly coats tender, flavorful chicken tikkas.</p>
+                                <p class="card-text">A rich, creamy gravy that perfectly coats tender, flavorful chicken tikkas. The dish balances bold spices with a smooth, luxurious texture, making it both comforting and indulgent.</p>
                                 <p class="price">$15.99</p>
                                 <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
                             </div>
@@ -120,7 +142,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Chicken Biryani" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Chicken Biryani</h5>
-                                <p class="card-text">Tender chicken cooked with fragrant basmati rice and a blend of aromatic spices.</p>
+                                <p class="card-text">Tender chicken cooked with fragrant basmati rice and a blend of aromatic spices, creating a perfectly balanced, flavorful dish.</p>
                                 <p class="price">$15.99</p>
                                 <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                             </div>
@@ -131,7 +153,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Chicken Tikka Pieces" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Chicken Tikka Pieces</h5>
-                                <p class="card-text">Juicy chunks of chicken marinated in a blend of yogurt and aromatic spices, then grilled.</p>
+                                <p class="card-text">Juicy chunks of chicken marinated in a blend of yogurt and aromatic spices, then grilled to perfection.</p>
                                 <p class="price">$15.99</p>
                                 <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
                             </div>
@@ -142,7 +164,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Grilled Chicken" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Grilled Chicken</h5>
-                                <p class="card-text">Juicy, tender chicken marinated in bold Indian spices and herbs, then grilled.</p>
+                                <p class="card-text">Juicy, tender chicken marinated in bold Indian spices and herbs, then grilled to perfection.</p>
                                 <p class="price">$13.99</p>
                                 <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                             </div>
@@ -153,7 +175,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Chicken Kebabs" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Chicken Kebabs</h5>
-                                <p class="card-text">Minced chicken blended with fresh herbs, onions, and spices (2 pieces).</p>
+                                <p class="card-text">Minced chicken blended with fresh herbs, onions, and a bold mix of spices (2 circular pieces).</p>
                                 <p class="price">$6.99</p>
                             </div>
                         </div>
@@ -163,7 +185,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Beef Kebabs" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Beef Kebabs</h5>
-                                <p class="card-text">Flavor-packed ground beef with onions, garlic, herbs, and spices (2 pieces).</p>
+                                <p class="card-text">Flavor-packed ground beef mixed with onions, garlic, herbs, and warm Indian spices, shaped into skewers and grilled until smoky and tender (2 circular pieces).</p>
                                 <p class="price">$8.99</p>
                             </div>
                         </div>
@@ -173,7 +195,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Chicken Wings" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Chicken Wings</h5>
-                                <p class="card-text">Crispy, golden-fried chicken wings with a zesty blend of spices (6 pieces).</p>
+                                <p class="card-text">Crispy, golden-fried chicken wings seasoned with a zesty blend of spices—juicy on the inside, crunchy on the outside, and bursting with flavor in every bite (6 pieces).</p>
                                 <p class="price">$7.99</p>
                                 <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
                             </div>
@@ -184,7 +206,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Roasted Chicken" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Roasted Chicken</h5>
-                                <p class="card-text">Succulent, juicy chicken pieces perfectly seasoned and slow-roasted.</p>
+                                <p class="card-text">Succulent, juicy chicken pieces perfectly seasoned with a blend of spices and slow-roasted to golden-brown perfection. Whether you prefer the tender leg, flavorful thigh, or a hearty combination of both, each piece is packed with rich, smoky flavor and a satisfying crunch on the outside.</p>
                                 <p class="price">$15.99</p>
                             </div>
                         </div>
@@ -194,7 +216,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Bell Pepper Chicken" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Bell Pepper Chicken</h5>
-                                <p class="card-text">Tender pieces of chicken stir-fried with tomatoes and bell peppers.</p>
+                                <p class="card-text">Tender pieces of chicken stir-fried with juicy tomatoes and vibrant bell peppers, all coated in a savory blend of sauces.</p>
                                 <p class="price">$15.99</p>
                             </div>
                         </div>
@@ -204,7 +226,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Karahi Chicken" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Karahi Chicken</h5>
-                                <p class="card-text">Tender chicken in a rich, spicy tomato-based gravy with fresh spices.</p>
+                                <p class="card-text">Tender chicken pieces simmered in a rich, spicy tomato-based gravy infused with freshly ground spices, garlic, and ginger. Cooked in a traditional wok (karahi) for that signature smoky aroma and bold flavor.</p>
                                 <p class="price">$15.99</p>
                                 <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
                             </div>
@@ -215,7 +237,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Chicken Korma" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Chicken Korma</h5>
-                                <p class="card-text">Tender chicken slow-cooked in a smooth, yogurt-based gravy.</p>
+                                <p class="card-text">A rich and creamy North Indian classic! Tender chicken slow-cooked in a smooth, yogurt-based gravy.</p>
                                 <p class="price">$15.99</p>
                             </div>
                         </div>
@@ -225,7 +247,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Grilled Lamb Chops" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Grilled Lamb Chops</h5>
-                                <p class="card-text">Juicy lamb chops marinated in fragrant spices and grilled (2 pieces).</p>
+                                <p class="card-text">Juicy lamb chops marinated in fragrant spices and herbs, grilled to perfection with a smoky char and tender, flavorful bite (2 pieces).</p>
                                 <p class="price">$18.99</p>
                                 <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
                             </div>
@@ -236,7 +258,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Grilled Lamb" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Grilled Lamb</h5>
-                                <p class="card-text">Succulent lamb pieces marinated with bold Indian spices and grilled.</p>
+                                <p class="card-text">Succulent lamb pieces marinated with bold Indian spices and grilled to tender, smoky perfection—rich in flavor and aroma.</p>
                                 <p class="price">$16.99</p>
                             </div>
                         </div>
@@ -246,7 +268,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Mutton Biryani" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Mutton Biryani</h5>
-                                <p class="card-text">Aromatic basmati rice layered with tender, slow-cooked mutton and spices.</p>
+                                <p class="card-text">Aromatic basmati rice layered with tender, slow-cooked mutton, fragrant spices, and herbs, creating a rich and flavorful royal feast.</p>
                                 <p class="price">$18.99</p>
                                 <span class="badge badge-primary"><i class="fas fa-utensils"></i> Specialty</span>
                             </div>
@@ -267,7 +289,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Matar Paneer" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Matar Paneer</h5>
-                                <p class="card-text">Soft paneer cubes and green peas in a spiced tomato-onion gravy.</p>
+                                <p class="card-text">Soft paneer cubes and green peas simmered in a spiced tomato-onion gravy for a hearty vegetarian favorite.</p>
                                 <p class="price">$12.99</p>
                             </div>
                         </div>
@@ -277,7 +299,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Palak Paneer" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Palak Paneer</h5>
-                                <p class="card-text">Creamy spinach blended with mild spices and tender paneer cubes.</p>
+                                <p class="card-text">Creamy spinach blended with mild spices and tender paneer cubes for a wholesome, flavorful vegetarian delight.</p>
                                 <p class="price">$12.99</p>
                                 <span class="badge badge-success"><i class="fas fa-star"></i> Bestseller</span>
                             </div>
@@ -288,7 +310,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Aaloo Gobi" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Aaloo Gobi</h5>
-                                <p class="card-text">A comforting mix of potatoes and cauliflower with turmeric and spices.</p>
+                                <p class="card-text">A comforting mix of potatoes and cauliflower sautéed with turmeric, cumin, and aromatic Indian spices.</p>
                                 <p class="price">$12.99</p>
                             </div>
                         </div>
@@ -298,7 +320,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Mix Vegetable Curry" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Mix Vegetable Curry</h5>
-                                <p class="card-text">A colorful medley of seasonal vegetables in a spiced tomato-onion gravy.</p>
+                                <p class="card-text">A colorful medley of seasonal vegetables simmered in a spiced tomato-onion gravy for a hearty and flavorful vegetarian dish.</p>
                                 <p class="price">$12.99</p>
                             </div>
                         </div>
@@ -308,7 +330,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Choley" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Choley</h5>
-                                <p class="card-text">Spicy and tangy chickpeas cooked in a rich tomato-based gravy.</p>
+                                <p class="card-text">Spicy and tangy chickpeas cooked in a rich tomato-based gravy, bursting with traditional Punjabi flavors.</p>
                                 <p class="price">$12.99</p>
                                 <span class="badge badge-danger"><i class="fas fa-pepper-hot"></i> Spicy</span>
                             </div>
@@ -319,7 +341,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Rajma Curry" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Rajma Curry</h5>
-                                <p class="card-text">Hearty red kidney beans slow-cooked in a spiced tomato-onion sauce.</p>
+                                <p class="card-text">Hearty red kidney beans slow-cooked in a spiced tomato-onion sauce, delivering a comforting and protein-packed classic.</p>
                                 <p class="price">$12.99</p>
                             </div>
                         </div>
@@ -329,7 +351,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Tadka Daal" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Tadka Daal</h5>
-                                <p class="card-text">Yellow lentils tempered with sizzling mustard seeds, garlic, and spices.</p>
+                                <p class="card-text">Yellow lentils cooked to perfection and tempered with sizzling mustard seeds, garlic, and aromatic spices for a flavorful, comforting dish.</p>
                                 <p class="price">$6.99</p>
                             </div>
                         </div>
@@ -339,7 +361,7 @@
                             <img src="https://placehold.co/250x200" class="card-img-top food-img" alt="Flavored Rice" data-src="https://placehold.co/250x200">
                             <div class="card-body">
                                 <h5 class="card-title">Flavored Rice</h5>
-                                <p class="card-text">Aromatic basmati rice cooked with pure desi ghee and saffron.</p>
+                                <p class="card-text">Aromatic basmati rice gently cooked with pure desi ghee and infused with delicate strands of saffron—rich, buttery, and lightly fragrant, this elegant side dish adds warmth and depth to any meal.</p>
                                 <p class="price">$6.99</p>
                             </div>
                         </div>
@@ -503,6 +525,15 @@
         <div class="container">
             <h2 class="text-center" data-aos="fade-up">Catering Menu</h2>
             <p class="text-center text-muted mb-5" data-aos="fade-up" data-aos-delay="200">Half sheet serves ~12-15 people, biryani/pulao serves 8-10 people</p>
+            <!-- Modern Marquee for Catering -->
+            <div class="contact-marquee py-3 bg-secondary text-white mb-5">
+                <div class="marquee">
+                    <div class="marquee-content">
+                        <span>Host a memorable event with Dilli Delights! Authentic North Indian catering for all occasions! 🍛✨</span>
+                        <span>Host a memorable event with Dilli Delights! Authentic North Indian catering for all occasions! 🍛✨</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- Vegetarian Catering -->
             <div class="catering-category mb-5">
@@ -823,6 +854,52 @@
         AOS.init({
             duration: 800,
             once: true
+        });
+
+        // Lightbox functionality
+        document.querySelectorAll('.food-img, .gallery-img').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = img.getAttribute('data-src') || img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        document.querySelector('.close-lightbox').addEventListener('click', () => {
+            document.getElementById('lightbox').style.display = 'none';
+        });
+
+        // Carousel scroll functions
+        function scrollMenu(containerId, direction) {
+            const container = document.getElementById(containerId);
+            const scrollAmount = 315; // 300px (item width) + 15px (margin)
+            if (direction === 'left') {
+                container.scrollLeft -= scrollAmount;
+            } else {
+                container.scrollLeft += scrollAmount;
+            }
+        }
+
+        // Auto-scroll every 20 minutes (1200 seconds)
+        setInterval(() => {
+            const containers = ['nonVegItems', 'vegItems', 'appetizerItems', 'dessertItems', 'drinksItems'];
+            containers.forEach(containerId => {
+                scrollMenu(containerId, 'right');
+            });
+        }, 1200 * 1000); // 1200 seconds = 20 minutes
+
+        // Show more functionality for gallery
+        document.getElementById('showMoreBtn').addEventListener('click', () => {
+            const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
+            hiddenItems.forEach((item, index) => {
+                if (index < 6) { // Show 6 more items
+                    item.classList.remove('hidden');
+                }
+            });
+            if (document.querySelectorAll('.gallery-item.hidden').length === 0) {
+                document.getElementById('showMoreBtn').style.display = 'none';
+            }
         });
     </script>
     <!-- Custom JS -->
