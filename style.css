@@ -251,7 +251,7 @@ h2::after {
     padding: 20px 40px;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    width: calc(300px * 4 + 20px * 3); /* 4 items of 300px width + 3 gaps of 10px each = 1260px */
+    width: calc(250px * 4 + 20px * 3); /* 4 items of 250px width + 3 gaps of 10px each = 1060px */
     max-width: 100%;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
@@ -400,6 +400,16 @@ h2::after {
     font-size: 1.2rem;
 }
 
+.contact-query {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-query a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
 /* Gallery Section */
 .gallery-grid {
     display: grid;
@@ -456,20 +466,6 @@ h2::after {
     right: 30px;
     color: #fff;
     font-size: 40px;
-    cursor: pointer;
-}
-
-/* Reservation Section */
-#reservation .card {
-    border: 1px solid #ddd;
-}
-
-.form-control:focus {
-    border-color: #FF6F00;
-    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
-}
-
-.form-check-label {
     cursor: pointer;
 }
 
@@ -534,7 +530,7 @@ footer h5 {
     }
 
     .menu-items {
-        width: calc(300px * 2 + 20px * 1); /* 2 items of 300px width + 1 gap of 20px = 620px */
+        width: calc(250px * 2 + 20px * 1); /* 2 items of 250px width + 1 gap of 20px = 520px */
     }
 
     .menu-item {
@@ -578,9 +574,9 @@ footer h5 {
     }
 
     .menu-item {
-        flex: 0 0 calc(100% - 0px); /* Account for padding */
-        min-width: calc(100% - 0px);
-        max-width: calc(100% - 0px);
+        flex: 0 0 calc(100% - 20px); /* Account for padding */
+        min-width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
     }
 
     .menu-item .card {
