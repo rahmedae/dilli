@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 30px;
 }
 
-/* Reverted Color Scheme */
+/* Color Scheme */
 .bg-primary {
     background-color: #e74c3c !important; /* Saffron/Orange shade */
 }
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #34495e !important; /* Darker shade for contrast */
 }
 
-/* Section Headings (Restored) */
+/* Section Headings */
 .section-heading {
     font-size: 2.5rem;
     color: #e74c3c;
@@ -110,7 +110,29 @@ h1, h2, h3, h4, h5, h6 {
 .category-heading {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #e74c3c;
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.category-heading::before,
+.category-heading::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: #f39c12;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.category-heading::before {
+    left: calc(50% - 120px);
+}
+
+.category-heading::after {
+    right: calc(50% - 120px);
 }
 
 .menu-container {
@@ -118,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    padding: 0;
+    padding: 0 60px; /* Increased padding to prevent overlap with arrows */
     overflow: hidden;
 }
 
@@ -210,14 +232,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-arrow-left {
-    left: 10px;
+    left: 20px; /* Adjusted to account for padding */
 }
 
 .carousel-arrow-right {
-    right: 10px;
+    right: 20px; /* Adjusted to account for padding */
 }
 
-/* Lightbox (Updated for Mobile and Desktop) */
+/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -252,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #e74c3c;
 }
 
-/* Full Menu Image Section (Restored) */
+/* Full Menu Image Section */
 .menu-image-container {
     text-align: center;
 }
@@ -316,6 +338,17 @@ h1, h2, h3, h4, h5, h6 {
     color: #c0392b;
 }
 
+/* Social Links in Navbar */
+.social-links-nav a {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0 10px;
+}
+
+.social-links-nav a:hover {
+    color: #e74c3c;
+}
+
 /* Footer */
 footer a:hover {
     color: #e74c3c;
@@ -325,6 +358,18 @@ footer a:hover {
 @media (max-width: 768px) {
     .menu-item {
         flex: 0 0 calc(50% - 15px); /* 2 columns on smaller screens */
+    }
+
+    .menu-container {
+        padding: 0 40px; /* Reduced padding for smaller screens */
+    }
+
+    .carousel-arrow-left {
+        left: 10px;
+    }
+
+    .carousel-arrow-right {
+        right: 10px;
     }
 
     .hero h1 {
@@ -339,6 +384,16 @@ footer a:hover {
         font-size: 2rem;
     }
 
+    .category-heading::before,
+    .category-heading::after {
+        width: 30px;
+        left: calc(50% - 90px);
+    }
+
+    .category-heading::after {
+        right: calc(50% - 90px);
+    }
+
     .close-lightbox {
         font-size: 2.5rem;
         top: 15px;
@@ -348,11 +403,20 @@ footer a:hover {
     .lightbox-img {
         max-height: 70%;
     }
+
+    .social-links-nav a {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
 }
 
 @media (max-width: 576px) {
     .menu-item {
         flex: 0 0 calc(100% - 15px); /* 1 column on very small screens */
+    }
+
+    .menu-container {
+        padding: 0 30px; /* Further reduced padding */
     }
 
     .hero h1 {
@@ -365,6 +429,16 @@ footer a:hover {
 
     .section-heading {
         font-size: 1.8rem;
+    }
+
+    .category-heading::before,
+    .category-heading::after {
+        width: 20px;
+        left: calc(50% - 70px);
+    }
+
+    .category-heading::after {
+        right: calc(50% - 70px);
     }
 
     .close-lightbox {
