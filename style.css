@@ -34,7 +34,7 @@ section {
 /* Add gap between logo and menu items on desktop */
 @media (min-width: 992px) {
     .navbar-brand {
-        margin-right: 30px; /* Adds gap between logo and menu items */
+        margin-right: 50px; /* Adds gap between logo and menu items */
     }
 }
 
