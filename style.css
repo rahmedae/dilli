@@ -19,12 +19,6 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1000; /* Ensure navbar is above other elements */
 }
 
-/* Ensure navbar is visible on mobile */
-.navbar-collapse {
-    background-color: #343a40; /* Match navbar background */
-    display: block !important; /* Force display on mobile */
-}
-
 /* Add top padding to sections to account for fixed navbar */
 section {
     scroll-margin-top: 80px; /* Adjust based on navbar height */
@@ -384,12 +378,33 @@ section {
     color: #fff;
 }
 
+.social-nav {
+    margin-left: 50px; /* Add gap between menu items and social icons on desktop */
+}
+
 /* Footer */
 footer a:hover {
     color: #e74c3c;
 }
 
 /* Responsive Adjustments */
+@media (max-width: 991px) {
+    .social-nav {
+        margin-left: 0; /* Remove extra margin on mobile */
+        margin-top: 10px; /* Add spacing between menu items and social icons on mobile */
+    }
+
+    .social-links-nav a {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+
+    .social-links-nav .contact-btn {
+        font-size: 0.9rem;
+        padding: 3px 8px;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-item {
         flex: 0 0 calc(50% - 15px); /* 2 columns on smaller screens */
@@ -437,16 +452,6 @@ footer a:hover {
 
     .lightbox-img {
         max-height: 70%;
-    }
-
-    .social-links-nav a {
-        font-size: 1rem;
-        padding: 0 5px;
-    }
-
-    .social-links-nav .contact-btn {
-        font-size: 0.9rem;
-        padding: 3px 8px;
     }
 }
 
