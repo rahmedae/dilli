@@ -4,6 +4,22 @@ AOS.init({
     once: true
 });
 
+// Smooth scrolling for nav links with offset for fixed navbar
+document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const offsetPosition = targetElement.offsetTop - navbarHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
 // Lightbox functionality
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -35,8 +51,7 @@ document.querySelectorAll('.carousel-arrow').forEach(button => {
         const container = document.getElementById(containerId);
         const direction = button.classList.contains('carousel-arrow-left') ? 'left' : 'right';
         const itemWidth = container.querySelector('.menu-item').offsetWidth + 15; // Item width + margin
-        const visibleItems = 4; // Number of items visible (4 columns)
-        const scrollAmount = itemWidth * visibleItems; // Scroll by 4 items
+        const scrollAmount = itemWidth; // Scroll by 1 item
 
         if (direction === 'left') {
             container.scrollLeft -= scrollAmount;
@@ -46,17 +61,22 @@ document.querySelectorAll('.carousel-arrow').forEach(button => {
     });
 });
 
-// Auto-scroll every 20 minutes (1200 seconds)
+// Auto-scroll every 15 seconds
 setInterval(() => {
     const containers = ['nonVegItems', 'vegItems', 'appetizerItems', 'dessertItems', 'drinksItems'];
     containers.forEach(containerId => {
         const container = document.getElementById(containerId);
         const itemWidth = container.querySelector('.menu-item').offsetWidth + 15;
-        const visibleItems = 4;
-        const scrollAmount = itemWidth * visibleItems;
-        container.scrollLeft += scrollAmount;
+        const scrollAmount = itemWidth;
+
+        // Check if we've reached the end
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            container.scrollLeft = 0; // Reset to start
+        } else {
+            container.scrollLeft += scrollAmount; // Scroll by 1 item
+        }
     });
-}, 1200 * 1000); // 1200 seconds = 20 minutes
+}, 15 * 1000); // 15 seconds
 
 // Show more functionality for gallery
 document.getElementById('showMoreBtn').addEventListener('click', () => {
