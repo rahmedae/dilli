@@ -61,7 +61,7 @@ document.querySelectorAll('.carousel-arrow').forEach(button => {
     });
 });
 
-// Auto-scroll every 15 seconds
+// Auto-scroll every 30 seconds
 setInterval(() => {
     const containers = ['nonVegItems', 'vegItems', 'appetizerItems', 'dessertItems', 'drinksItems'];
     containers.forEach(containerId => {
@@ -76,7 +76,7 @@ setInterval(() => {
             container.scrollLeft += scrollAmount; // Scroll by 1 item
         }
     });
-}, 15 * 1000); // 15 seconds
+}, 30 * 1000); // 30 seconds
 
 // Show more functionality for gallery
 document.getElementById('showMoreBtn').addEventListener('click', () => {
