@@ -24,6 +24,13 @@ section {
     scroll-margin-top: 80px; /* Adjust based on navbar height */
 }
 
+/* Navbar Logo */
+.navbar-logo {
+    width: 150px; /* Base width for desktop */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080') no-repeat center center/cover;
@@ -403,6 +410,10 @@ footer a:hover {
         font-size: 0.9rem;
         padding: 3px 8px;
     }
+
+    .navbar-logo {
+        width: 120px; /* Slightly smaller for tablets */
+    }
 }
 
 @media (max-width: 768px) {
@@ -453,6 +464,10 @@ footer a:hover {
     .lightbox-img {
         max-height: 70%;
     }
+
+    .navbar-logo {
+        width: 100px; /* Smaller for mobile devices */
+    }
 }
 
 @media (max-width: 576px) {
@@ -495,5 +510,9 @@ footer a:hover {
     .social-links-nav .contact-btn {
         font-size: 0.8rem;
         padding: 2px 6px;
+    }
+
+    .navbar-logo {
+        width: 80px; /* Smallest size for very small screens */
     }
 }
