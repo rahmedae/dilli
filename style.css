@@ -14,6 +14,21 @@ h1, h2, h3, h4, h5, h6 {
     padding: 60px 0;
 }
 
+/* Navbar */
+.navbar {
+    z-index: 1000; /* Ensure navbar is above other elements */
+}
+
+/* Ensure navbar is visible on mobile */
+.navbar-collapse {
+    background-color: #343a40; /* Match navbar background */
+}
+
+/* Add top padding to sections to account for fixed navbar */
+section {
+    scroll-margin-top: 80px; /* Adjust based on navbar height */
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080') no-repeat center center/cover;
@@ -114,10 +129,16 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     text-align: center;
     padding: 10px 0;
+    display: inline-block; /* Ensure the heading width adjusts to content */
 }
 
-.category-heading::before,
-.category-heading::after {
+.category-heading-wrapper {
+    text-align: center;
+    position: relative;
+}
+
+.category-heading-wrapper::before,
+.category-heading-wrapper::after {
     content: '';
     width: 50px;
     height: 2px;
@@ -127,11 +148,11 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-50%);
 }
 
-.category-heading::before {
+.category-heading-wrapper::before {
     left: calc(50% - 120px);
 }
 
-.category-heading::after {
+.category-heading-wrapper::after {
     right: calc(50% - 120px);
 }
 
@@ -384,13 +405,13 @@ footer a:hover {
         font-size: 2rem;
     }
 
-    .category-heading::before,
-    .category-heading::after {
+    .category-heading-wrapper::before,
+    .category-heading-wrapper::after {
         width: 30px;
         left: calc(50% - 90px);
     }
 
-    .category-heading::after {
+    .category-heading-wrapper::after {
         right: calc(50% - 90px);
     }
 
@@ -431,13 +452,13 @@ footer a:hover {
         font-size: 1.8rem;
     }
 
-    .category-heading::before,
-    .category-heading::after {
+    .category-heading-wrapper::before,
+    .category-heading-wrapper::after {
         width: 20px;
         left: calc(50% - 70px);
     }
 
-    .category-heading::after {
+    .category-heading-wrapper::after {
         right: calc(50% - 70px);
     }
 
