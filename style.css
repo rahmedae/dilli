@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Ensure navbar is visible on mobile */
 .navbar-collapse {
     background-color: #343a40; /* Match navbar background */
+    display: block !important; /* Force display on mobile */
 }
 
 /* Add top padding to sections to account for fixed navbar */
@@ -359,7 +360,7 @@ section {
     color: #c0392b;
 }
 
-/* Social Links in Navbar */
+/* Social Links and Contact in Navbar */
 .social-links-nav a {
     color: #fff;
     font-size: 1.2rem;
@@ -368,6 +369,19 @@ section {
 
 .social-links-nav a:hover {
     color: #e74c3c;
+}
+
+.social-links-nav .contact-btn {
+    background-color: #e74c3c;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.social-links-nav .contact-btn:hover {
+    background-color: #c0392b;
+    color: #fff;
 }
 
 /* Footer */
@@ -429,6 +443,11 @@ footer a:hover {
         font-size: 1rem;
         padding: 0 5px;
     }
+
+    .social-links-nav .contact-btn {
+        font-size: 0.9rem;
+        padding: 3px 8px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -466,5 +485,10 @@ footer a:hover {
         font-size: 2rem;
         top: 10px;
         right: 10px;
+    }
+
+    .social-links-nav .contact-btn {
+        font-size: 0.8rem;
+        padding: 2px 6px;
     }
 }
