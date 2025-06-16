@@ -26,7 +26,7 @@ section {
 
 /* Navbar Logo */
 .navbar-logo {
-    width: 150px; /* Base width for desktop */
+    width: 110px; /* Base width for desktop */
     height: auto; /* Maintain aspect ratio */
     display: block;
 }
