@@ -138,7 +138,7 @@ section {
     position: relative;
     text-align: center;
     padding: 10px 0;
-    display: inline-block; /* Ensure the heading width adjusts to content */
+    display: flow; /* Ensure the heading width adjusts to content */
 }
 
 .category-heading-wrapper {
