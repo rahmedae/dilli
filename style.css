@@ -68,6 +68,7 @@ section {
 .btn-primary {
     background-color: #e74c3c;
     border-color: #e74c3c;
+    margin-bottom: 5px;
 }
 
 .btn-primary:hover {
